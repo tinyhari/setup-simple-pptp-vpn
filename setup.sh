@@ -87,15 +87,15 @@ LEN=$(echo ${#PASS})
 
 if [ -z "$PASS" ] || [ $LEN -lt 8 ] || [ -z "$NAME"]
 then
-   P1=`cat /dev/urandom | tr -cd abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789 | head -c 3`
-   P2=`cat /dev/urandom | tr -cd abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789 | head -c 3`
-   P3=`cat /dev/urandom | tr -cd abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789 | head -c 3`
+   P1=`t`
+   P2=`t`
+   P3=`t`
    PASS="$P1-$P2-$P3"
 fi
 
 if [ -z "$NAME" ]
 then
-   NAME="vpn"
+   NAME="tony"
 fi
 
 cat >/etc/ppp/chap-secrets <<END
